@@ -23,31 +23,31 @@
 terraform {
   required_providers {
     panos = {
-      source = "PaloAltoNetworks/panos"
       version = "1.6.3"
     }
   }
 }
 
 module "networking" {
-    source = "./modules/networking"
+  source = "./modules/networking"
 
-    template = var.template
-    stack    = var.stack
+  template = var.template
+  stack    = var.stack
 }
 
 module "policies" {
-    source = "./modules/policies"
+  source = "./modules/policies"
 
-    device_group = var.device_group
+  device_group = var.device_group
 
-    zone_untrust = module.networking.zone_untrust
-    zone_web     = module.networking.zone_web
-    zone_db      = module.networking.zone_db
+  zone_untrust = module.networking.zone_untrust
+  zone_web     = module.networking.zone_web
+  zone_db      = module.networking.zone_db
 
-    interface_untrust = module.networking.interface_untrust
-    interface_web     = module.networking.interface_web
-    interface_db      = module.networking.interface_db
+  interface_untrust = module.networking.interface_untrust
+  interface_web     = module.networking.interface_web
+  interface_db      = module.networking.interface_db
+
 }
 
 # ** Not supported on Terraform Cloud **
