@@ -23,7 +23,6 @@
 terraform {
   required_providers {
     panos = {
-      source  = "PaloAltoNetworks/panos"
       version = "1.6.3"
     }
   }
@@ -48,6 +47,7 @@ module "policies" {
   interface_untrust = module.networking.interface_untrust
   interface_web     = module.networking.interface_web
   interface_db      = module.networking.interface_db
+
 }
 
 # ** Not supported on Terraform Cloud **
