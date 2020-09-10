@@ -20,15 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-terraform {
-  required_providers {
-    panos = {
-      source  = "paloaltonetworks/panos"
-      version = "1.6.3"
-    }
-  }
-}
-
+// Template and stack definition
 module "networking" {
   source = "./modules/networking"
 
