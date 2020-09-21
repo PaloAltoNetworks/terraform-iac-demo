@@ -1,1 +1,1 @@
-** UCB demo **
+GSK demo
